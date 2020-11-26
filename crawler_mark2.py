@@ -31,13 +31,13 @@ while Rep > 0:
     for tag in tags:
         tag = re.findall('http.+html', str(tag))
 #making a list of the urls in the webpage to allow locating the correct one
-        html.append(tag)
+        html.extend(tag)
 
     #QUALITY INSURANCE
     print ("Rep#: ", Rep_og-Rep+1, html[location])
 
     #TRYING TO MAKE THE RESULT FEASIBLE TO BE FED INTO THE URL FIELD.......
-    html_location = str(html(location))
+    html_location = str(html[location])
     html_2_url = str(html_location)
     html_2_url= html_2_url.strip('[]')
 
